@@ -28,17 +28,18 @@ def send(id, msg, img):
 
     session = VkApi(token='8fdf4fe1f59267d65bb0587f30a7f0adbe2315e2ae83731758e1f7208fc0ebc3a8b6834da89be3d187b87').get_api()
 
-    upload = vk_api.VkUpload(session)
+    # upload = vk_api.VkUpload(session)
 
-    image = ses_req.get('https://img.google-info.org/storage/big/142954.jpg', stream=True)
+    # image = ses_req.get('https://img.google-info.org/storage/big/142954.jpg', stream=True)
 
-    photo = upload.photo_messages(photos=image.raw)[0]
+    # photo = upload.photo_messages(photos=image.raw)[0]
 
-    vk_photo_url = 'https://vk.com/photo{}_{}'.format(
-        photo[0]['owner_id'], photo[0]['id']
-    )
+    # vk_photo_url = 'https://vk.com/photo{}_{}'.format(
+        # photo[0]['owner_id'], photo[0]['id']
+    # )
 
-    session.messages.send(user_id=id, message=msg, v='5.103', random_id=0, attachment=vk_photo_url)
+    #session.messages.send(user_id=id, message=msg, v='5.103', random_id=0, attachment=vk_photo_url)
+    session.messages.send(user_id=id, message=msg, v='5.103', random_id=0)
 
 
 if __name__ == '__main__':
