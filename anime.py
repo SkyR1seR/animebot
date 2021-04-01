@@ -32,7 +32,7 @@ def send(id, msg, img):
 
     upload = vk_api.VkUpload(session)
 
-    image = ses_req.get('img', stream=True)
+    image = ses_req.get(img, stream=True)
 
     photo = upload.photo_messages(photos=image.raw)[0]
 
